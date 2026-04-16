@@ -35,6 +35,23 @@ http://localhost:5173/
 
 > **Nota:** Si el puerto 5173 está ocupado, Vite automáticamente usa el siguiente disponible (5174, 5175, etc.) y lo muestra en la terminal.
 
+### ⚠️ Error común en Windows: "No se puede cargar npm.ps1"
+
+Si al correr `npm install` les sale este error:
+
+```
+npm : No se puede cargar el archivo C:\Program Files\nodejs\npm.ps1.
+El archivo no está firmado digitalmente...
+```
+
+**Solución:** Ejecutar este comando **una sola vez** en PowerShell:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Después de eso, vuelvan a correr `npm install` y funcionará normal.
+
 ### Si quieres que sea accesible desde otra computadora en la misma red:
 
 ```bash
